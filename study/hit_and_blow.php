@@ -2,14 +2,12 @@
     function hit_and_blow(){
         $count=0;
         $randomArray = generate_randomArray();
-        print_r($randomArray);
+        //print_r($randomArray);        //動作確認用
         
         while(true){
             echo "■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□\n";
-            
             echo ++$count."回目のチャレンジ！\n";
             $inputArray = check_input();
-            //echo "\n";
             
             $check=array("hit"=>0,"blow"=>0);
             
@@ -34,13 +32,11 @@
     
     function generate_randomArray(){
         $randomArray = array($rand = rand(1,9),0,0);
-        //$randomArray=str_split((string)$random);
         for($i=0;$i<count($randomArray);$i++){
             $rand = rand(1,9);
             for($j=0;$j<$i;$j++){
                 if($randomArray[$j]==$rand){
                     $i--;
-                    //echo "i=".$i."\n";
                 }else{
                     $randomArray[$i]=$rand;
                 }
@@ -55,7 +51,6 @@
             echo "3桁の半角数字を重複なしで入力してください:";
             $input = fgets(STDIN);
             $inputArray = str_split($input);
-            //echo print_r($inputArray);
             
             array_pop($inputArray);         //末尾に余計な配列が加わるので、除去
             
@@ -69,7 +64,7 @@
                     }
                     $checkCount--;
                 }
-                //echo "checkCount:".$checkCount;
+
                 if($checkCount==0){
                     $checkInput=false;
                     return $inputArray;

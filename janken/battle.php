@@ -6,7 +6,7 @@
 **/
 $kind = array(0,2,5);
 $pc_hand = $kind[rand(0,2)];
-$player_hand = $_POST['playerHand'];//$_POSTはURLにデータが表示されない。$_GETは表示される。取得するときはそのまま描く。
+$player_hand = $_POST['playerHand'];//$_POSTはURLにデータが表示されない。$_GETは表示される。取得するときは同様。
 
 if(($player_hand-$pc_hand == -2) || ($player_hand-$pc_hand == -3) || ($player_hand-$pc_hand == 5)){
     $result="勝ち";
